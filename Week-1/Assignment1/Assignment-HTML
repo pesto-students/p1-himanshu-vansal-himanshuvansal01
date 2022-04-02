@@ -82,13 +82,13 @@ When the DOM tree is constructed, its values are virtually pass to another three
 
 The renders  relation to DOM is one to one, which means non- visual elements will not be inserted like head element and the element who’s displayed value is assigned to none.
 
-Some render object correspond to a DOM node but not  in the same place. The position of the elements are out of flow, placed in different parts of a tree and mapped to the frames.
+Some git render object correspond to a DOM node but not  in the same place. The position of the elements are out of flow, placed in different parts of a tree and mapped to the frames.
 
 
 
 h. Layout and Painting
 
-Layout: When the render is created and pass to the tree, it doesn’t have any layout like position or size. We need to calculate these values which is more often called layout.
+Layout: When the render is created and pass to the tree, himanshuvansal01it doesn’t have any layout like position or size. We need to calculate these values which is more often called layout.
 
 HTML uses flow based layout model, which means it will parse the layout from the top-to bottom and left to right, most probably the layout will be done in single pass. But table will require more than one pass.
 
