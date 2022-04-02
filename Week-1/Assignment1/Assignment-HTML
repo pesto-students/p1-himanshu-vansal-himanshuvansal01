@@ -1,0 +1,134 @@
+Assignment - 1
+
+What is the main functionality of the bowser?
+
+It provides the user interface, to interact with users. Every browser has render engine which is responsible for user representation. Render engine only mark-up languages such as HTML and XML.
+Browser engine is an interface between user interface and rendering engine.
+To receive the content, browser has to communicate through the server via network, that’s why sometimes we see 404 network_server_error.
+To dynamically change functionality of the page in the browser, we need  a programming language ie JavaScript. Every browser have JavaScript Interpreter which is responsible to convert javascript to byte code so that browser can understand.
+Bowser has dataStorage, such as Cookies and LocalStorage which is responsible to store the information even if refresh the page.
+
+
+b. High Level Components of a browser.?
+
+1.The user interface: It includes the bookmarks menu, address bar and Front/Back arrow. Everything is includes except the window where we see the requested page.
+
+2. The browser engine: arrange the actions between UI and rendering engine.
+
+3. The rendering engine: Render and parse the  HTML and css, and display the content on the screen.
+
+4. Networking : It is used for network call such as HTTP request to server for different platform.
+
+5. UI backend: This backend exposes a generic interface that is not platform specific.Underneath it uses operating system user interface methods.
+
+
+
+
+6. Javascript interpreter: Convert and execute javascript code.
+
+7. Data Store: This is a persistent layer, The browser may need to save all sorts of data locally, such as cookies. Browsers also support storage mechanisms such as localStorage, IndexedDB, WebSQL and FileSystem.
+
+
+
+
+
+
+
+
+
+Image Link - https://drive.google.com/file/d/1CznH0Pra0mcWJP78I9VwHYd8xFDJBjRV/view?usp=sharing
+
+
+c. Rendering engine and its use.
+
+Rendering engine responsibility is to display the content, it can only parse html and Xml documents and images. Different browser using different engines like Chrome and Opera use Blink.
+
+This rendering engine will start getting the contents of the requested document from the networking layer. This will usually be done in  chunks. The rendering engine will start parsing the HTML document and convert elements to DOM nodes in a tree called content tree. Then engine will parse the css files in style elements.Css and Html will together make another tee called render tree.
+
+The rendering engine will try to display the contents on the screen as soon as possible. It will not wait until all html is render, it will keep continue to parse the content and get content from the network and will show one by one.
+
+Image Link. - https://drive.google.com/file/d/1uiFAZ2ssIBAvaYgZLrGBIiElLKhTftK2/view?usp=sharing
+
+
+d.Parsers (HTML, CSS, etc)
+
+Parsers: Parsing is the way to convert data in more understandable language like avoiding grammar syntax.
+
+HTML Parser: The jobs of the html parser is to parse the html mark up language to parser tree.  The HTML and XML  is kind of same but when it comes to parsing there is a lot of difference. HTML parsing is more soft anxd forgiving where as, xml is stiff and demanding syntax. This is the main reason HMTL is popular, it easily forgive you mistake and make life easier for the developer. On the other hand, it is difficult to formal grammar, because html parser is not context free.
+
+CSS Parsing: Css is also a context free parsing. For more understanding, look at the example below:
+
+Css contains the rule set, like part inside the curly braces contains the rules that are applied by this rules.
+
+Div.h1{
+Color: red;
+Font-weight: bold;
+}
+
+Div:h1 is a selector and inside the curly braces there are number of declaration separated by semi-colon.
+
+
+Image Link: https://drive.google.com/file/d/18XVTt6Y6J-9etu_5dKhoTxqHNEMYZnl8/view?usp=sharing
+
+
+e. Script Processors
+
+The model of web is synchronous. Script tag parsed immediately, it halts till all the parsing is done. Script can be an external resources as well, so it will have to fetch the data from the network and parse. If we don’t want to wait for the script parsing process, we can use defer attribute to text, it will not halt for the document processing. HTML 5 mark script tag as asynchronous so it will be parsed and executed by external thread.
+
+
+f. Tree construction
+
+When the DOM tree is constructed, its values are virtually pass to another three which is called another tree called render tree. This render tree is responsible for displaying the content in correct order. This render tree knows, how to layout and paint its child objects.
+
+The renders  relation to DOM is one to one, which means non- visual elements will not be inserted like head element and the element who’s displayed value is assigned to none.
+
+Some render object correspond to a DOM node but not  in the same place. The position of the elements are out of flow, placed in different parts of a tree and mapped to the frames.
+
+
+
+h. Layout and Painting
+
+Layout: When the render is created and pass to the tree, it doesn’t have any layout like position or size. We need to calculate these values which is more often called layout.
+
+HTML uses flow based layout model, which means it will parse the layout from the top-to bottom and left to right, most probably the layout will be done in single pass. But table will require more than one pass.
+
+Layout is repetitive process. It begins at root render that is <html tag> and will calculate all the geometry information for each render.
+
+Painting: In the painting stage, the render tree renders the “paint()” method to display the content on the screen.
+
+Then panting order is from back to front that is:
+
+Background color
+Background image
+Border
+Children
+Outline
+
+ How URL works in the browser?
+
+When you enter the url, it looks for ip address for domain name vis DNS.
+The browser send the http request to the server and get the response.
+The server send the response to the browser.
+Browser render the html content
+The browser send additional http request to render certain objects like html, javascript etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
