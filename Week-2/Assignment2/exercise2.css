@@ -1,0 +1,72 @@
+.hello{
+    padding-left: 600px;
+    padding-top: 50px;
+    position: absolute;
+
+}
+
+.row1{
+    display: flex;
+    padding-left: 530px;
+
+}
+.row2{
+    display: flex;
+    padding-left: 530px;
+}
+#app{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+
+
+}
+
+@keyframes mymove {
+
+
+    from {
+
+
+        transform: translateX(40px) rotate(-90deg) ;
+
+
+    }
+    to {
+
+        transform: translateY(40px) rotate(90deg);
+
+    }
+}
+
+
+#app1{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: relative;
+}
+
+
+
+#app2{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+
+#app3{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.main:hover{
+
+    animation-name: mymove;
+    animation-duration: 1s;
+    padding: auto;
+
+}
