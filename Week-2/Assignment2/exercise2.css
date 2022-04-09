@@ -21,24 +21,52 @@
     position: relative;
 
 
+
 }
+
+.main:hover #app{
+    animation-name: mymove;
+    animation-duration: 5s;
+
+
+}
+
 
 @keyframes mymove {
 
 
-    from {
 
-
-        transform: translateX(40px) rotate(-90deg) ;
-
-
+    from{
+        right: 0px;
+        transform: rotate(-90deg);
     }
-    to {
 
-        transform: translateY(40px) rotate(90deg);
-
+    to{
+        right: 110px;
+        transform: rotate(90deg);
     }
+
 }
+
+
+@keyframes mymove1 {
+
+
+
+    from{
+        left: 0px;
+        transform: rotate(-90deg);
+    }
+
+    to{
+        left: 120px;
+        transform: rotate(90deg);
+    }
+
+
+}
+
+
 
 
 #app1{
@@ -49,11 +77,27 @@
 }
 
 
+.main:hover #app1{
+    animation-name: mymove1;
+    animation-duration: 5s;
+
+
+}
+
+
 
 #app2{
     width: 100px;
     height: 100px;
     background-color: blue;
+    position: relative;
+}
+
+.main:hover #app2{
+    animation-name: mymove;
+    animation-duration: 5s;
+
+
 }
 
 
@@ -61,12 +105,22 @@
     width: 100px;
     height: 100px;
     background-color: green;
-}
-
-.main:hover{
-
-    animation-name: mymove;
-    animation-duration: 1s;
-    padding: auto;
+    position: relative;
 
 }
+
+.main:hover #app3{
+    animation-name: mymove1;
+    animation-duration: 5s;
+
+
+
+}
+
+
+
+
+
+
+
+
