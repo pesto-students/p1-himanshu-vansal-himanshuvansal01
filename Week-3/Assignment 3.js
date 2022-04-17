@@ -132,26 +132,24 @@ Refactor the above stack implementation, using the concept of closure, such that
 
 
 
-console.log("Welcome to Programiz!");
-
 function createStack() {
     // Write your code here...}
 
 
-    let items  = new Array(),
+    const array  = [];
 
-    push = function(item){
-        items.push(item);
-
-    },
-     pop = function(item){
-         return items.pop();
-
+    return {
+        items : array,
+        push : function(item){
+             this.items.push(item);
+         },
+        pop : function(item){
+            return this.items.pop();
+            }
+            }
     }
 
-    return items
 
-    }
 
     const stack=createStack();
     stack.push(10);
