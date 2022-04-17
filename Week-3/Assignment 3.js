@@ -7,14 +7,23 @@ The function will take an unspecified number of integer inputs and a reducer met
 const memoize = (fn) => {
   let cache = {};
   let n = fn;
-  return (n) => {
-    if (n in cache) {
-      return cache[n];
+  return (...args) => {
+      let a = args[0];
+      let b = args[1];
+
+    if (a === cache[a]) {
+        if(b === cache[b]){
+            console.log("Fetching From cache")
+            return cache[a] + cache[b];
+        }
     }
     else {
-      let result = n;
-      cache[n] = result;
-      return result;
+      let number1 = a;
+      let number2 = b;
+      cache[a] = number1;
+      cache[b] = number2
+      console.log(cache[a] + cache[b])
+      return cache[a] + cache[b];
     }
   }
 }
@@ -22,10 +31,18 @@ const memoize = (fn) => {
 function add(a,b)
 {
     return a+b
-}//Create a method called memoize such that:
+}
 const memoizeAdd=memoize(add);//then calling...
-memoizeAdd(100,100);//returns 200
+console.time("First call");
 memoizeAdd(100,100);
+console.timeEnd("First call");
+
+console.time("First call");
+memoizeAdd(100,100);
+console.timeEnd("First call");
+
+
+
 
 
 Exercise 3.2
@@ -94,10 +111,9 @@ console.log(Math.max.apply(null, [1.2,3,4,5,6,7]))
 
 Excercise 3.3
 
-What is the output of the below problem and why:[30min]function createIncrement() {let count=0;functionincrement() {count++;}letmessage=`Count is${count}`;functionlog() {console.log(message);}return[increment,log];}const[increment,log] =createIncrement();increment();increment();increment();log();// What is logged?
+What is the output of the below problem and why:[30min]
 
-
-Logged message is Count is 0, because increment function has not been called inside createIncrement function, suppose if we call increment() function after declaration. The output would be Count is 1. For more clarity look at the code below:
+function createIncrement()
 
 function createIncrement()
 {
@@ -107,12 +123,10 @@ function createIncrement()
 
          count++;
 
-        console.log("Hello", count)
 
     }
-    increment()
     let message=`Count is${count}`;
-    console.log("Message is: ",message)
+
     function log()
     {
         console.log(message);
@@ -126,6 +140,11 @@ increment();
 increment();
 increment();
 log();// What is logged?
+
+Answer:
+Logged message is Count is 0, because createIncrement is called first and count is initilzed to 0,
+where as if message has been inside the log function than the result would be `Count is 3`.
+
 
 Excercise 3.4:
 Refactor the above stack implementation, using the concept of closure, such that there is noway to access items array outside of createStack() function scope: (2-3 hours)functioncreateStack() {return{items:[],push(item) {this.items.push(item);},pop() {returnthis.items.pop();}};}conststack=createStack();stack.push(10);stack.push(5);stack.pop();// => 5stack.items;// => [10]stack.items= [10,100,1000];// Encapsulationbroken!functioncreateStack() {// Write your code here...}conststack=createStack();stack.push(10);stack.push(5);stack.pop();// => 5stack.items;// => undefined
