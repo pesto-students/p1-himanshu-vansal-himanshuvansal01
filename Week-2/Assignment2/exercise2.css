@@ -1,0 +1,126 @@
+.hello{
+    padding-left: 600px;
+    padding-top: 50px;
+    position: absolute;
+
+}
+
+.row1{
+    display: flex;
+    padding-left: 530px;
+
+}
+.row2{
+    display: flex;
+    padding-left: 530px;
+}
+#app{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+
+
+
+}
+
+.main:hover #app{
+    animation-name: mymove;
+    animation-duration: 5s;
+
+
+}
+
+
+@keyframes mymove {
+
+
+
+    from{
+        right: 0px;
+        transform: rotate(-90deg);
+    }
+
+    to{
+        right: 110px;
+        transform: rotate(90deg);
+    }
+
+}
+
+
+@keyframes mymove1 {
+
+
+
+    from{
+        left: 0px;
+        transform: rotate(-90deg);
+    }
+
+    to{
+        left: 120px;
+        transform: rotate(90deg);
+    }
+
+
+}
+
+
+
+
+#app1{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    position: relative;
+}
+
+
+.main:hover #app1{
+    animation-name: mymove1;
+    animation-duration: 5s;
+
+
+}
+
+
+
+#app2{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+}
+
+.main:hover #app2{
+    animation-name: mymove;
+    animation-duration: 5s;
+
+
+}
+
+
+#app3{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+
+}
+
+.main:hover #app3{
+    animation-name: mymove1;
+    animation-duration: 5s;
+
+
+
+}
+
+
+
+
+
+
+
+
